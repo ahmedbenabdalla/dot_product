@@ -1,0 +1,33 @@
+PROCEDURE dot_product(v1,v2 : ARRAY_OF INTEGER[3], VAR PS :INTEGER)
+VAR
+    i:INTEGER
+BEGIN
+    PS:=0;
+    IF (v1.length==v2.length) THEN
+         FOR i FROM 0 TO v1.length STEP step  DO
+        PS:=PS+(v1[i]*v2[i]);
+    END_FOR
+    END_IF
+   
+END
+ALGORITHM algorithm_name
+VAR
+    PS:INTEGER
+    T :  ARRAY_OF INTEGER[3][50];
+BEGIN
+   FOR i FROM 0 TO 2 DO
+    FOR j FROM 0 TO 49 DO
+        Write("donner T["+i+"]["+j+"]");
+        Read(T[i][j]);
+    END_FOR
+   END_FOR
+  
+   FOR j FROM 0 TO 48 DO
+        dot_product(T[j],T[j+1],PS)
+        IF (PS==0) THEN
+            Write("les deux vecteur sont orthogonaux")
+        END_IF
+   END_FOR
+   
+  
+END
